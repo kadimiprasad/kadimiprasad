@@ -1,0 +1,31 @@
+sql problem set-2
+
+  1.  Select * from hotel;
+  
+  2.  Select * from hotel where city='NEW YORK';
+
+  3.  Select name,city from guest order by city;
+
+  4.  select * from room where type='N' order by price;
+
+  5.  select count(*) from hotel;
+
+  6.  Select DISTINCT city from guest;
+
+  7.  Select AVG(price) from room;
+
+  8.  Select h.name,r.room_no,r.type from hotel h join room r where r.hotel_no=h.hotel_no;
+
+  9.  Select h.name,b.date_from,b.date_to,b.room_no from hotel h join booking b where h.hotel_no=b.hotel_no and city='NEW YORK';
+
+  10. Select count(*) from booking where b.date_from like '%SEP%;
+
+  11. Select name,city from guest inner join on booking where b.date_from like '%AUG% and city='NEW YORK';
+
+  12. Select h.name,b.room_no from hotel inner join on booking where not in (r.room_no= b.room_no);
+
+  13. Select h.name,h.city from hotel where max(price) from room;
+  
+  14. Select h.name,r.room_no,h.city,r.price from hotel where min(price) as min(select name from hotel where hotel="Boston");
+
+  15. Select AVG(price) from room group by city;
