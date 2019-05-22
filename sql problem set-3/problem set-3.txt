@@ -1,0 +1,35 @@
+ 01. Select Pl.Name,Pk.Weight From Plant Pl Inner Join Picked Pk On Pk.Plantfk = Pl.Plantid Group By Pl.Name Having Pl.Name = 'Corn'; 
+
+ 
+ 02. Select Pk.Gardenerfk Gardener_Id,Gd.Name Gardener_Name,Pl.Name Plant_Name,Lo.Name Direction From Plant Pl  
+     Inner Join Picked Pk On Pk.Plantfk = Pl.Plantid Inner Join Gardener Gd 
+     On Pk.Gardenerfk = Gd.Gardenerid Inner Join Location Lo On Pk.Locationfk = Lo.Locationid Where Gd.Name = 'Erin'; 
+
+ 03. Alter Table Gardener Add Column Experience Int After Age; 
+ 
+ 
+ 04. Select Pl.Name,Ptd.Seeds From Plant Pl Inner Join Planted Ptd On Pl.Plantid = Ptd.Plantfk Where Ptd.Seeds < 20 And Ptd.Date1 = '2012-04-14'; 
+ 
+ 
+ 05. Select Name,Sunlight,Water From Plant Where Name Like 'R%' Or Name Like 'C%'; 
+ 
+ 
+ 06. Select Pl.Name,Ptd.Seeds From Plant Pl Inner Join Planted Ptd On Ptd.Plantfk = Pl.Plantid Group By Pl.Name Order By Pl.Name Desc; 
+ 
+ 
+ 07. Select Pl.Name,Ptd.Seeds,Pk.Amount As Average_Seeds  From Plant Pl Inner Join Planted Ptd 
+     On Ptd.Plantfk = Pl.Plantid Inner Join Picked Pk On Pk.Plantfk = Ptd.Plantfk; 
+ 
+ 
+ 08. Select Pl.Name Plant_Name,Gd.Name Gardener_Name,Ptd.Date1 Planted_Date,Pk.Amount From Gardener Gd Inner Join Planted Ptd  
+     On Gd.Gardenerid = Ptd.Gardenerfk Inner Join Plant Pl On Pl.Plantid = Ptd.Plantfk Inner Join Picked Pk 
+     On Pk.Plantfk = Ptd.Plantfk Where Gd.Name = 'Tim';  
+ 
+ 09. Select Ptd.Gardenerfk Gardener_Id,Gd.Name Gardener_Name,Ptd.Locationfk Planted,Pkd.Locationfk Picked From Planted Ptd Inner Join Picked Pkd 
+     On Ptd.Locationfk = Pkd.Locationfk Inner Join Gardener Gd On Gd.Gardenerid = Ptd.Gardenerfk Group By Gd.Gardenerid; 
+ 
+ 
+ 10. Select Pl.Name,Lo.Name,Pkd.Date1 From Plant Pl Inner Join Picked Pkd On Pkd.Plantfk = Pl.Plantid Inner Join Location Lo  
+     On Lo.Locationid = Pkd.Locationfk Where Lo.Name != 'West' And Month(Pkd.Date1) != 08;
+
+
