@@ -1,0 +1,68 @@
+sql problem set -4
+
+
+ 01. select title from prasad.Movie where director='Steven Spielberg';
+
+
+ 02. select m.title,m.year from prasad.Movie as m inner join prasad.Rating as r 
+     on m.mID=r.rID where stars in(4,5) order by year;
+
+ 03. select title from prasad.Movie as m inner join prasad.Rating as r on m.mID=r.rID
+     where r.stars=null;
+
+ 04. select p.name from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     where ratingdate=null;
+
+ 05. select p.name,m.title,r.stars,r.ratingDate from prasad.Movie as m inner join prasad.Rating as r on m.mID=r.mID
+     inner join prasad.Reviewer as p on r.rID=p.rID
+     order by name,title,stars;
+
+ 06. select p.name ,m.title from prasad.Movie as m inner join prasad.Rating as r on m.mID=r.mID
+     inner join prasad.Reviewer as p on r.rID=p.rID
+     where p.rID=r.rID;
+
+ 07. select m.title,r.stars from prasad.Movie as m inner join prasad.Rating  as r on m.mID=r.mID
+     where r.stars in (select max(stars) from prasad.Rating)
+     order by title;
+
+ 08. select m.title,avg(stars) from prasad.Rating as r inner join prasad.Movie as m on r.mID=m.mID
+     group by title 
+     order by stars desc ;
+
+ 10. select p.name ,m.title from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     inner join prasad.Movie as m on r.mID=m.mID
+     where m.title='Gone with the wind';
+
+ 11. select p.name,m.title,r.stars from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     inner join prasad.Movie as m on r.mID=m.mID
+     where p.name=m.director;
+
+ 12. select p.name,m.title from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     inner join prasad.Movie as m on r.mID=m.mID 
+     group by m.title
+     order by p.name,m.title;
+
+ 13. select p.name,m.title from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     inner join prasad.Movie as m on r.mID=m.mID 
+     where name !='Chirs Jackson'
+     group by title; 
+
+ 15. select p.name,m.title,r.stars from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     inner join prasad.Movie as m on r.mID=m.mID
+     where r.stars in(select min(stars) from prasad.Rating); 
+
+ 16. select p.name,m.title,avg(r.stars)from prasad.Reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     inner join prasad.Movie as m on r.mID=m.mID 
+     group by title
+     order by stars desc;
+
+ 17. select p.name from prasad.reviewer as p inner join prasad.Rating as r on p.rID=r.rID
+     where r.rID>=3;
+
+ 18. Select director,title FROM (select director,title,count(director) as d 
+     from prasad.Movie  group by director) as title where d >1;
+
+
+
+
+
