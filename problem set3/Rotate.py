@@ -11,3 +11,6 @@ class rotate:
         obj = rotate()
         obj.rotate(word,amt)
 rotate.getData()
+rotate.method()
+
+

@@ -1,4 +1,4 @@
-import string
+'''import string
 def isPalin(s):
     str2=''
     for i in range(len(s)-1,-1,-1):
@@ -15,4 +15,10 @@ def rem_punct(s):
          return s1
 s=input("enter a string:")
 s1=rem_punct(s)
-isPalin(s1)
+isPalin(s1)'''
+Interview_qustions:
+n=8
+sum=0
+for i in range(8):
+    sum=sum+n
+print(sum)

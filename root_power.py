@@ -1,6 +1,5 @@
 import math
 
-
 def find_result(integer):
     result_list = []
     for pwr in range(1, 625):
