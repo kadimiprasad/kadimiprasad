@@ -1,0 +1,187 @@
+1) write a python script to get a student details from user using raw_input:
+i) roll_id
+ii) name
+iii) class name
+iv) marks - '58,67,89,99'
+
+
+dict1={}
+dict2={}
+list=['roll_id','name','class_name','marks']
+for k in range(1):
+    list1=[]
+    for i in l:
+        print("enter :", i)
+        list1.append(raw_input(''))
+    st=dict(zip(list,list1))
+
+    for i,j in st.items():
+        if i=="roll_id":
+            dict1[j]={i:j for i,j in st.items() if i!="roll_id"}
+    dict2.update(dict1)
+print dict2
+
+
+
+2)
+a)Given the following dictionary:
+      inventory = {
+                   'gold' : 500,
+                   'pouch' : ['flint', 'twine', 'gemstone'],
+                   'backpack' : ['xylophone','dagger', 'bedroll','bread loaf']
+                }
+
+
+
+inventory["pocket"]='[seashell,strange_berry,lint]'
+
+k=sorted(inventory['backpack'])
+del inventory['backpack'][1]
+
+k=inventory['gold']
+k=k+50
+inventory['gold']=k
+print inventory
+
+
+2)
+b) create a student details dictionary having {'student1':[marks1,marks2, marks3],'student2':[marks1,marks2,marks3]}
+
+       i)Create the dictionary as mentioned above
+
+       ii) need to perform total and average of the marks for each student
+
+
+di={'student1':[50,60,70],'student2':[60,70,80]}
+total=0
+for i in di.keys():
+    k=di[i]
+    total=sum(k)
+    print total
+    avg=total//len(k)
+    print avg
+
+ 
+
+
+c)  write the below contents to  a file named 'marks.txt' using python script
+science = 50
+maths = 90
+english = 85
+tamil = 92
+
+       i) read the file and calculate the total sum of marks available there
+
+def read():
+    import re
+    s=[]
+    su=0
+    f=open("mysqlqueries.txt","r+")
+    for i in f:
+        k=re.findall("\d+",i)
+        s.extend(k)
+    for i in s:
+        su=su+int(i)
+        av=su//len(s)
+    print su
+    print av
+write()
+read()
+ 
+ 
+
+i) write a python script to make a simple calculator that can add, subtract, multiply and divide using functions 
+
+   a) have four functions with two arguments
+
+   b) get the values from user
+
+   c) Use try and except 
+
+
+from __future__ import division
+try:
+    def add(a,b):
+        return a+b
+    def sub(a,b):
+        return a-b
+    def mul(a,b):
+        return a*b
+    def div(a,b):
+        return a/b
+    a=input("enter the number")
+    b=input("enter the number")
+    print add(a,b)
+    print sub(a,b)
+    print mul(a,b)
+    print div(a,b)
+except  ValueError as e:
+    print [e]
+except  ZeroDivisionError as z:
+    print [z]
+except  ArithmeticError as a:
+    print [a]
+ 
+
+
+
+ii)Define a function that can accept two strings as input and concatenate them and then print it as a output
+
+def add(s1,s2):
+    s3=s1+s2
+    print s3
+s1=raw_input("enter ")
+s2=raw_input("enter2")
+print add(s1,s2)
+
+
+
+iii) write a python script having functions defined to perfrom - sum_digits(1738)
+
+output should be 1+7+3+8 = 18
+
+
+def sum(n):
+    sum=0
+    for i in n:
+        sum=sum+int(i)
+    print sum
+n="4198"
+sum(n)
+
+
+
+iv)  write the below contents to  a file named 'marks.txt' using python script using functions
+science = 50
+maths = 90
+english = 85
+tamil = 92
+       i) read the file and calculate the total sum of marks available there
+def read_file():
+def write_file():
+
+
+def write():
+    f1=open("mysqlqueries.txt","w+")
+    li=['science = 50','maths = 90','english = 85','tamil = 92']
+    for i in li:
+        f1.write(i)
+    print f1
+
+def read():
+    import re
+    s=[]
+    su=0
+    f=open("mysqlqueries.txt","r+")
+    for i in f:
+        k=re.findall("\d+",i)
+        s.extend(k)
+    for i in s:
+        su=su+int(i)
+        av=su//len(s)
+    print su
+    print av
+write()
+read()
+ 
+
